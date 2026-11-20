@@ -24,7 +24,7 @@ const stationTypes = {
                     allStationsList[airports[i]].ordinal = i - missedStations;
                     profile.stations[i-missedStations] = allStationsList[airports[i]];
                 } else {
-                    console.error(`Station ${airports[i]} not found. Not added to profile ${name}`);
+                    console.error(`::warning::Station ${airports[i]} not found. Not added to profile ${name}`);
                     missedStations++;
                 }
             }
@@ -76,7 +76,7 @@ async function readProfile(profileName) {
         profileJson.stations = [];
         return profileJson;
     } catch (e) {
-        console.error(`Could not find profile ${profileName}.json`);
+        console.error(`::warning::Could not find profile ${profileName}.json`);
     }
     
 }
